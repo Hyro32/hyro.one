@@ -1,0 +1,27 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const { headings } = Astro.props
+---
+
+<nav class="flex flex-col gap-2">
+  <h2 class="font-semibold">{t('title-table-of-contents')}</h2>
+  <ul class="text-sm text-gray-700">
+    {
+      headings.map((heading) => (
+        <li class="hover:text-gray-500">
+          {heading.depth <= 2 ? (
+            <a href={'#' + heading.slug}>{heading.text}</a>
+          ) : (
+            <a class="ml-4 mt-2" href={'#' + heading.slug}>
+              {heading.text}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</nav>
