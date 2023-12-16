@@ -1,6 +1,6 @@
 ---
-import { languages } from '../i18n/ui'
-import { getLangFromUrl, getSlugFromUrl } from '../i18n/utils'
+import { languages } from '../../i18n/ui'
+import { getLangFromUrl, getSlugFromUrl } from '../../i18n/utils'
 import { FaLanguage } from 'react-icons/fa6'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
@@ -15,18 +15,19 @@ const slug = getSlugFromUrl(Astro.url)
     <RiArrowDropDownLine />
   </button>
   <ul
-    class="hidden absolute right-0 mt-2 rounded-md shadow-md bg-white ring-1 ring-black ring-opacity-5 z-20 w-full"
+    class="hidden absolute right-0 mt-2 rounded-md shadow-md bg-white ring-1 ring-black ring-opacity-5 z-20 w-full dark:bg-secondary"
     id="lang-languages"
   >
     {
       Object.entries(languages).map(([lang, label]) => (
-        <li class="p-1 rounded-md text-gray-700 hover:bg-gray-100 active:bg-blue-100">
+        <li class="w-full p-1 rounded-md text-gray-700 hover:bg-gray-100 active:bg-blue-100 dark:text-white dark:hover:bg-gray-500">
           <a href={`/${lang}/${slug}`}>{label}</a>
         </li>
       ))
     }
   </ul>
 </div>
+
 <script is:inline>
   const button = document.getElementById('lang-btn')
   const list = document.getElementById('lang-languages')

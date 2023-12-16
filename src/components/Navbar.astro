@@ -1,8 +1,12 @@
 ---
-import LangPicker from "./LangPicker.astro";
+import LangPicker from "./pickers/LangPicker.astro";
+import ThemePicker from "./pickers/ThemePicker.astro";
 ---
 
 <nav class="flex items-center justify-between w-full mt-8">
   <a href="/" class="text-xl">Mardroide</a>
-  <LangPicker />
+  <div class="flex items-center gap-8">
+    <ThemePicker />
+    <LangPicker />
+  </div>
 </nav>

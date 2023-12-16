@@ -9,10 +9,10 @@ const { headings } = Astro.props
 
 <nav class="flex flex-col gap-2">
   <h2 class="font-semibold">{t('title-table-of-contents')}</h2>
-  <ul class="text-sm text-gray-700">
+  <ul class="text-sm text-gray-700 dark:text-gray-400">
     {
       headings.map((heading) => (
-        <li class="hover:text-gray-500">
+        <li class="hover:text-gray-500 dark:hover:text-gray-200">
           {heading.depth <= 2 ? (
             <a href={'#' + heading.slug}>{heading.text}</a>
           ) : (
