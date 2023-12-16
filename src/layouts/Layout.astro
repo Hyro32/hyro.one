@@ -1,28 +1,33 @@
 ---
-import Head from '../components/Head.astro';
+import Head from '../components/Head.astro'
+import Navbar from '../components/Navbar.astro'
+import { getLangFromUrl } from '../i18n/utils'
 
 interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url)
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
-		<Head />
+    <Head />
     <title>{title}</title>
   </head>
-  <body class="bg-gradient-to-t from-gray-800 via-gray-900 to-black text-white">
-    <slot />
-  </body>
+  <body class="mx-auto flex flex-col items-center max-w-6xl">
+    <Navbar />
+    <div class="w-full mt-16">
+      <slot />
+    </div>
+  </body><style is:global>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Rubik', sans-serif;
+    }
+  </style>
 </html>
-<style is:global>
-  html,
-  body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Rubik', sans-serif;
-  }
-</style>
