@@ -7,8 +7,8 @@ export const getLangFromUrl = (url: URL) => {
 }
 
 export const getSlugFromUrl = (url: URL) => {
-  const [, , slug] = url.pathname.split('/')
-  return slug
+  const [, , ...slug] = url.pathname.split('/')
+  return slug.join('/')
 }
 
 export const useTranslations = (lang: keyof typeof ui) => {

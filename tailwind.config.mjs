@@ -8,6 +8,9 @@ export default {
       colors: {
         main: '#17181c',
         secondary: '#353841'
+      },
+      fontFamily: {
+        rubik: ['-apple-system', 'Rubik', 'sans-serif']
       }
     }
   },

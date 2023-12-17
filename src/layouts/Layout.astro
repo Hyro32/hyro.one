@@ -20,10 +20,12 @@ const { title, headings } = Astro.props
     <Head />
     <title>{title}</title>
   </head>
-  <body class="mx-auto flex flex-col items-center max-w-6xl dark:bg-[#17181c] dark:text-white">
+  <body
+    class="mx-auto flex flex-col items-center max-w-6xl dark:bg-main dark:text-white font-rubik"
+  >
     <Navbar />
     <div class="flex w-full mt-16 gap-10">
-      <div class="w-3/4">
+      <div class="w-3/4 dark:text-gray-300">
         <slot />
       </div>
       <div class="flex flex-col gap-10 w-1/4">
@@ -32,12 +34,4 @@ const { title, headings } = Astro.props
       </div>
     </div>
   </body>
-  <style is:global>
-    html,
-    body {
-      height: 100%;
-      width: 100%;
-      font-family: 'Rubik', sans-serif;
-    }
-  </style>
 </html>

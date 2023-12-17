@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content'
+import { getLangFromUrl } from '../i18n/utils'
+import BlogPostCard from './cards/BlogPostCard.astro'
+
+const posts = await getCollection('blog')
+const lang = getLangFromUrl(Astro.url)
+const filteredByLangPosts = posts.filter(
+  (post) => post.slug.split('/')[0] === lang
+)
+---
+
+<ul class="flex flex-col items-center w-full gap-10">
+  {filteredByLangPosts.map((post) => <BlogPostCard post={post} />)}
+</ul>

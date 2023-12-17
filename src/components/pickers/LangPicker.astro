@@ -20,7 +20,7 @@ const slug = getSlugFromUrl(Astro.url)
   >
     {
       Object.entries(languages).map(([lang, label]) => (
-        <li class="w-full p-1 rounded-md text-gray-700 hover:bg-gray-100 active:bg-blue-100 dark:text-white dark:hover:bg-gray-500">
+        <li class="w-full p-1 text-center rounded-md text-gray-700 hover:bg-gray-100 active:bg-blue-100 dark:text-white dark:hover:bg-gray-500">
           <a href={`/${lang}/${slug}`}>{label}</a>
         </li>
       ))

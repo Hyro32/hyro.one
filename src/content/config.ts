@@ -6,4 +6,15 @@ const siteCollection = defineCollection({
   })
 })
 
-export const collections = { site: siteCollection }
+const blogCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    avatar: z.string().optional(),
+    description: z.string(),
+    date: z.date(),
+    tags: z.array(z.string()).optional()
+  })
+})
+
+export const collections = { site: siteCollection, blog: blogCollection }
