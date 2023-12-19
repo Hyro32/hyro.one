@@ -9,7 +9,7 @@ const { post } = Astro.props
   <div class="flex items-center justify-between text-sm p-2">
     <div class="flex items-center gap-2">
       <img
-        src={post.data.avatar}
+        src=`https://avatars.githubusercontent.com/${post.data.githubUsername}`
         alt="avatar"
         class="rounded-md w-4 h-4 object-cover"
       />
