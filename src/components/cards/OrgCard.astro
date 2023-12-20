@@ -5,25 +5,50 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<div
-  class="w-full h-60 border-[#30363d] rounded-md bg-red-200 flex-none relative border-2 shadow"
->
-  <img
-    src="https://github.githubassets.com/images/modules/dashboard/codespaces/bg.jpg"
-    alt="org-card-background"
-    class="object-cover w-full h-full"
-  />
-  <div class="flex flex-col justify-between absolute p-4 top-0 w-full h-full">
-    <h1 class="text-lg text-white">{t('org-join-title')}</h1>
-    <p class="w-3/4 text-stone-400 text-xs leading-5">
-      {t('org-join-description')}
-    </p>
-    <a
-      href="https://github.com/sphealhub"
-      target="_blank"
-      class="border-[#673281] border p-1 rounded-md text-white bg-[#4c4150] hover:opacity-80 transition w-full text-center"
-    >
-      {t('org-join-us')}
-    </a>
+<a href="https://github.com/sphealhub" target="_blank" class="org-card">
+  <div class="org-card-left">
+    <h4>{t('org-join-title')}</h4>
+    <p>{t('org-join-description')}</p>
   </div>
-</div>
+  <img src="/waxer.png" alt="flork" />
+</a>
+
+<style>
+  .org-card {
+    display: flex;
+    position: relative;
+    padding: 15px;
+    border: 1px solid var(--sl-color-text-accent);
+    border-radius: 10px;
+    background-color: var(--sl-color-gray-6);
+    text-decoration: none;
+    color: var(--sl-color-text);
+  }
+
+  .org-card-left {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+
+  .org-card-left h4 {
+    margin: 0;
+  }
+
+  .org-card-left p {
+    margin-bottom: 0;
+    font-size: small;
+  }
+
+  .org-card p svg {
+    vertical-align: middle;
+  }
+
+  .org-card img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    margin-right: 5px;
+  }
+</style>

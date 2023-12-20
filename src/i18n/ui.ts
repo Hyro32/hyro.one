@@ -10,10 +10,8 @@ export const ui = {
     // Table Of Contents
     'title-table-of-contents': 'On this page',
     // OrgCard
-    'org-join-us': 'Join us',
     'org-join-title': 'Want to contribute to open source?',
-    'org-join-description':
-      'Help us improving the world by contributing to open source projects. Sphealhub is a community created by me!'
+    'org-join-description': 'Click here to get started!.'
   },
   es: {
     // Navbar
@@ -21,10 +19,8 @@ export const ui = {
     // Table Of Contents
     'title-table-of-contents': 'En esta página',
     // OrgCard
-    'org-join-us': 'Únete a nosotros',
     'org-join-title': '¿Quieres contribuir al código abierto?',
-    'org-join-description':
-      'Ayúdanos a mejorar el mundo contribuyendo a proyectos de código abierto. ¡Sphealhub es una comunidad creada por mí!'
+    'org-join-description': 'Haga clic aquí para empezar.'
   }
 }
 

@@ -6,11 +6,49 @@ import ThemePicker from './pickers/ThemePicker.astro'
 const lang = getLangFromUrl(Astro.url)
 ---
 
-<nav class="flex items-center justify-between w-full mt-8">
-  <a href="/" class="text-xl">Mardroide</a>
-  <div class="flex items-center gap-8">
-    <a href=`/${lang}/blog`>Community blog</a>
-    <ThemePicker />
-    <LangPicker />
+<nav class="main-navbar">
+  <div class="main-navbar-content">
+    <a href="/" class="text-xl">Mardroide</a>
+    <div class="main-navbar-right">
+      <a href=`/${lang}/blog`>Community blog</a>
+      <ThemePicker />
+      <LangPicker />
+    </div>
   </div>
 </nav>
+
+<style>
+  .main-navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--sl-nav-height);
+    background-color: var(--sl-color-bg-nav);
+  }
+
+  .main-navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 72rem;
+  }
+
+  .main-navbar a {
+    text-decoration: none;
+    font-size: x-large;
+    color: var(--color-text);
+  }
+
+  .main-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .main-navbar-right a {
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+</style>
