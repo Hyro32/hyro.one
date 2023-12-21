@@ -1,8 +1,8 @@
 ---
 import { languages } from '../../i18n/ui'
 import { getLangFromUrl, getSlugFromUrl } from '../../i18n/utils'
-import { FaLanguage } from 'react-icons/fa6'
-import { RiArrowDropDownLine } from 'react-icons/ri'
+import Language from 'astro-heroicons/solid/language.astro'
+import ChevronDown from 'astro-heroicons/solid/chevrondown.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const slug = getSlugFromUrl(Astro.url)
@@ -10,9 +10,9 @@ const slug = getSlugFromUrl(Astro.url)
 
 <div class="lang-picker">
   <button id="lang-btn">
-    <FaLanguage />
+    <Language class="icon" />
     {languages[lang]}
-    <RiArrowDropDownLine />
+    <ChevronDown class="icon" />
   </button>
   <ul id="lang-languages">
     {

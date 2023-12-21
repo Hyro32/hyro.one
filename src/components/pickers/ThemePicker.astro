@@ -1,13 +1,13 @@
 ---
-import { RiPaintFill } from 'react-icons/ri'
 import { useTranslations, getLangFromUrl } from '../../i18n/utils'
+import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<button class="flex items-center gap-2" id="theme-toggle">
-  <RiPaintFill />
+<button class="theme-picker" id="theme-toggle">
+  <Sparkles class="icon" />
   {t('navbar-theme')}
 </button>
 
@@ -37,3 +37,11 @@ const t = useTranslations(lang)
 
   document.documentElement.setAttribute('data-theme', getTheme)
 </script>
+
+<style>
+  .theme-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

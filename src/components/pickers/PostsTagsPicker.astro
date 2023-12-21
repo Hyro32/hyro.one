@@ -1,0 +1,22 @@
+---
+import TagBadge from '../TagBadge.astro'
+import { tags } from '../../content/_tags'
+---
+
+<ul class="posts-tags-picker">
+  {
+    tags.map(({ label, bgColor, textColor }) => (
+      <TagBadge label={label} bgColor={bgColor} textColor={textColor} />
+    ))
+  }
+</ul>
+
+<style>
+  .posts-tags-picker {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+  }
+</style>

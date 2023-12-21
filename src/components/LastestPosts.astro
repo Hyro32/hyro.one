@@ -5,13 +5,14 @@ import BlogPostCard from './cards/BlogPostCard.astro'
 
 const posts = await getCollection('blog')
 const lang = getLangFromUrl(Astro.url)
-const filteredByLangPosts = posts.filter(
-  (post) => post.slug.split('/')[0] === lang
-)
+
+const filteredPosts = posts
+  .filter((post) => post.slug.split('/')[0] === lang)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
 <ul class="latest-posts">
-  {filteredByLangPosts.map((post) => <BlogPostCard post={post} />)}
+  {filteredPosts.map((post) => <BlogPostCard post={post} />)}
 </ul>
 
 <style>
