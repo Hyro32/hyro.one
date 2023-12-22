@@ -5,9 +5,14 @@ import BlogPostCard from './cards/BlogPostCard.astro'
 
 const posts = await getCollection('blog')
 const lang = getLangFromUrl(Astro.url)
+const tagParam = Astro.url.searchParams.get('tag')
 
 const filteredPosts = posts
-  .filter((post) => post.slug.split('/')[0] === lang)
+  .filter(
+    (post) =>
+      post.slug.startsWith(`${lang}/`) &&
+      (!tagParam || tagParam === post.data.tag.toLowerCase())
+  )
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
