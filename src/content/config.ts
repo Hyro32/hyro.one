@@ -9,9 +9,8 @@ const siteCollection = defineCollection({
 const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    author: z.string(),
-    githubUsername: z.string(),
     description: z.string(),
+    author: z.string(),
     date: z.date(),
     tag: z.string()
   })

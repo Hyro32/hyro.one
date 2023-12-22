@@ -1,4 +1,4 @@
-# mardroide.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/04a04dfd-0d24-4949-9ea8-ad4e92049021/deploy-status)](https://app.netlify.com/sites/luminous-kitten-816cf2/deploys)
+# mardroide.dev
 
 Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://mardroide.dev).
 
@@ -6,8 +6,8 @@ Welcome to my portfolio! This website is dedicated to the community, apart from 
 
 - [Astro](https://astro.build)
 - [React](https://react.dev/)
-- [react-icons](https://react-icons.github.io/react-icons/)
-- [tailwindcss](https://tailwindcss.com/)
+- [astro-heroicons](https://github.com/seanmcp/astro-heroicons)
+- [astro-expressive-code](https://github.com/expressive-code/expressive-code/tree/main/packages/astro-expressive-code)
 - Formatters:
   - [eslint](https://eslint.org/)
   - [Prettier](https://prettier.io/)

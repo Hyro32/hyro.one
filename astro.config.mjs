@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import expressiveCode from 'astro-expressive-code'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +16,6 @@ export default defineConfig({
     ssr: {
       noExternal: ['astro-heroicons']
     }
-  }
+  },
+  adapter: vercel()
 })

@@ -1,19 +1,37 @@
 ---
 import TagBadge from '../TagBadge.astro'
 import { tags } from '../../content/_tags'
+import { useTranslations, getLangFromUrl } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<ul class="posts-tags-picker">
-  {
-    tags.map(({ label, bgColor, textColor }) => (
-      <TagBadge label={label} bgColor={bgColor} textColor={textColor} />
-    ))
-  }
-</ul>
+<div class="posts-tags-picker">
+  <h3>{t('tags-picker-title')}</h3>
+  <ul>
+    {
+      tags.map(({ label, bgColor, textColor }) => (
+        <TagBadge label={label} bgColor={bgColor} textColor={textColor} />
+      ))
+    }
+  </ul>
+</div>
 
 <style>
   .posts-tags-picker {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .posts-tags-picker h3 {
+    margin: 0;
+  }
+
+  .posts-tags-picker ul {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;

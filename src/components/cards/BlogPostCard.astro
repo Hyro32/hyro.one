@@ -9,7 +9,7 @@ const tag = tags.find((tag) => tag.label === post.data.tag)
   <div class="blog-post-card-top">
     <div class="blog-post-card-top-author">
       <img
-        src=`https://avatars.githubusercontent.com/${post.data.githubUsername}`
+        src=`https://avatars.githubusercontent.com/${post.data.author}`
         alt="avatar"
       />
       <span>{post.data.author}</span>
@@ -80,6 +80,7 @@ const tag = tags.find((tag) => tag.label === post.data.tag)
     height: 20px;
     object-fit: cover;
     border-radius: 20%;
+    border: 1px solid var(--sl-color-gray-4);
   }
 
   .blog-post-card:hover {
