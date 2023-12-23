@@ -82,7 +82,7 @@
 	--sl-line-height: 1.8;
 	--sl-line-height-headings: 1.2;
 
-	--sl-font-system: 'Rubik', -apple-system, sans-serif;
+	--sl-font-system: -apple-system, 'Rubik', -apple-system, sans-serif;
 
 	/** Key layout values */
 	--sl-nav-height: 3.5rem;

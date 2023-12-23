@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ['astro-heroicons']
+      external: ['astro-heroicons']
     }
   },
   adapter: vercel()
