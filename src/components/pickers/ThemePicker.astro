@@ -1,0 +1,47 @@
+---
+import { useTranslations, getLangFromUrl } from '../../i18n/utils'
+import Sparkles from 'astro-heroicons/outline/Sparkles.astro'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<button class="theme-picker" id="theme-toggle">
+  <Sparkles class="icon" />
+  {t('navbar-theme')}
+</button>
+
+<script is:inline>
+  const getTheme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
+
+  const handleToggleClick = () => {
+    const newTheme =
+      document.documentElement.getAttribute('data-theme') === 'light'
+        ? 'dark'
+        : 'light'
+    document.documentElement.setAttribute('data-theme', newTheme)
+    window.localStorage.setItem('theme', newTheme)
+  }
+
+  document
+    .getElementById('theme-toggle')
+    .addEventListener('click', handleToggleClick)
+
+  document.documentElement.setAttribute('data-theme', getTheme)
+</script>
+
+<style>
+  .theme-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

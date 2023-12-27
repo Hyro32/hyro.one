@@ -1,13 +1,16 @@
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
-import react from '@astrojs/react'
+import mdx from '@astrojs/mdx'
+import expressiveCode from 'astro-expressive-code'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
-  vite: {
-    ssr: {
-      noExternal: ['react-icons']
-    }
-  }
+  output: 'hybrid',
+  integrations: [
+    expressiveCode({
+      themes: ['one-dark-pro']
+    }),
+    mdx()
+  ],
+  adapter: vercel()
 })
