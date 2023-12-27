@@ -71,7 +71,7 @@ const { title } = Astro.props
 
   .main-container {
     display: flex;
-    width: 100%;
+    width: 90%;
     max-width: 72rem;
     margin-top: 4rem;
   }
@@ -98,5 +98,22 @@ const { title } = Astro.props
   .icon {
     width: 1rem;
     height: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-container {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .mdx-container {
+      width: 90%;
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .rigth-sidebar-container {
+      display: none;
+    }
   }
 </style>

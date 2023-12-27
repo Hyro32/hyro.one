@@ -2,6 +2,7 @@
 import { getLangFromUrl } from '../i18n/utils'
 import LangPicker from './pickers/LangPicker.astro'
 import ThemePicker from './pickers/ThemePicker.astro'
+import Bookmark from 'astro-heroicons/outline/Bookmark.astro'
 
 const lang = getLangFromUrl(Astro.url)
 ---
@@ -14,6 +15,9 @@ const lang = getLangFromUrl(Astro.url)
       <ThemePicker />
       <LangPicker />
     </div>
+    <a href=`/${lang}/blog` class="main-navbar-blog-link">
+      <Bookmark class="blog-icon" />
+    </a>
   </div>
 </nav>
 
@@ -50,5 +54,26 @@ const lang = getLangFromUrl(Astro.url)
   .main-navbar-right a {
     text-decoration: none;
     font-size: 1.1rem;
+  }
+
+  .main-navbar-blog-link {
+    display: none;
+  }
+
+  .blog-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+    color: var(--color-text);
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-navbar-right {
+      display: none;
+    }
+
+    .main-navbar-blog-link {
+      display: block;
+    }
   }
 </style>
