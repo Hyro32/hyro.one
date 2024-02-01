@@ -19,13 +19,13 @@ Welcome to my portfolio! This website is dedicated to the community, apart from 
 1. Download all dependencies
 
 ```shell
-yarn
+bun install
 ```
 
 2. Start the project
 
 ```shell
-yarn dev
+bunx --bun astro dev
 ```
 
 ## Contributing

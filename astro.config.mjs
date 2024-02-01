@@ -1,16 +1,17 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import expressiveCode from 'astro-expressive-code'
-import vercel from '@astrojs/vercel/serverless'
+import vercel from '@astrojs/vercel/static'
+import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
   integrations: [
     expressiveCode({
       themes: ['one-dark-pro']
     }),
-    mdx()
+    mdx(),
+    tailwind()
   ],
   adapter: vercel()
 })
