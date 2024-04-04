@@ -1,0 +1,39 @@
+---
+import { getLangFromUrl } from '../i18n/utils'
+import Layout from './Layout.astro'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  title: string
+  post: any
+}
+
+const GITHUB_URL =
+  'https://github.com/Mardroide/mardroide.dev/blob/main/src/content/blog/'
+const lang = getLangFromUrl(Astro.url)
+const { title, post } = Astro.props
+---
+
+<Layout {lang} {title}>
+  <div class="flex items-start justify-center w-full">
+    <div class="flex flex-col w-[45%] gap-6">
+      <div class="flex flex-col">
+        <h2 class="text-2xl font-semibold">{post.data.title}</h2>
+        <p>{post.data.description}</p>
+      </div>
+      <slot />
+      <div
+        class="flex items-center justify-center pt-4"
+      >
+        <a
+          href={GITHUB_URL + post.slug + '.mdx'}
+          target="_blank"
+          class="flex items-center gap-2 text-gray-600"
+        >
+          <Icon name="mdi:github" class="size-6" />
+          Edit this post on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

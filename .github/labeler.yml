@@ -1,5 +1,0 @@
-i18n:
-- any: ['src/content/site/**/*.mdx']
-- any: ['src/i18n/*']
-article:
-- any: ['src/content/blog/**/*.mdx']

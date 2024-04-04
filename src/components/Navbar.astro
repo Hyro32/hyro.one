@@ -1,18 +1,14 @@
-<nav class="flex items-center justify-between mt-12">
-  <div>
-    <a href="/" class="font-semibold text-lg">mardroide</a>
-    <p class="text-gray-700 text-sm">Student and developer</p>
+---
+import { Icon } from 'astro-icon/components'
+import LangSelector from './LangSelector.astro'
+---
+
+<nav class="w-full py-4 bg-[#dbdbdb]">
+  <div class="mx-auto flex items-center justify-between max-w-[80%]">
+    <a href="/" class="flex items-center gap-2">
+      <Icon name="mdi:code-json" class="size-5" />
+      <p class="text-xl">marc<span class="font-semibold">.one</span></p>
+    </a>
+    <LangSelector />
   </div>
-  <ul class="flex items-center gap-4">
-    <li>
-      <a href="https://github.com/Mardroide" target="_blank">
-        <img src="/github-mark.svg" alt="Github" class="w-4 h-4" />
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/mrcxs86" target="_blank">
-        <img src="/twitterx.svg" alt="Twitter" class="w-4 h-4" />
-      </a>
-    </li>
-  </ul>
 </nav>

@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { getCollection } from 'astro:content'
+import PostLayout from '../../../layouts/PostLayout.astro'
+
+export const getStaticPaths = (async () => {
+  const blog = await getCollection('blog')
+
+  return blog.map((post) => {
+    const [lang, ...slug] = post.slug.split('/')
+    return {
+      params: { lang, post: slug.join('/') },
+      props: { post }
+    }
+  })
+}) satisfies GetStaticPaths
+
+const { post } = Astro.props
+const { Content } = await post.render()
+---
+
+<PostLayout title={post.data.title + ' - mardroide.dev'} {post}>
+  <Content />
+</PostLayout>
