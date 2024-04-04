@@ -8,17 +8,11 @@ const notSelectedLags = Object.keys(languages).filter((l) => l !== lang)
 ---
 
 <div class="relative">
-  <button
-    id="lang-button"
-    class="flex items-center gap-2 bg-[#e9e9e9] rounded-md px-2 py-1"
-  >
-    <p class="font-semibold">{languages[lang]}</p>
+  <button id="lang-button" class="flex items-center gap-2 rounded-md px-2 py-1">
+    <p>{languages[lang]}</p>
     <Icon name="mdi:keyboard-arrow-down" />
   </button>
-  <ul
-    id="lang-list"
-    class="hidden w-full mt-2 font-semibold absolute bg-[#e0e0e0] rounded-md text-center h-fit py-1 px-2"
-  >
+  <ul id="lang-list" class="hidden w-full mt-2 absolute rounded-md py-1 px-2">
     {
       notSelectedLags.map((lang) => (
         <a href={`/${lang}/`} class="w-full hover:bg">

@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html,
-  body {
-    margin: 0 auto;
-    width: 100%;
-  }
+body {
+  @apply break-words antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  word-wrap: break-word;
 }

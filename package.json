@@ -16,13 +16,13 @@
     "@astrojs/vercel": "^6.1.0",
     "astro": "^4.0.5",
     "astro-expressive-code": "^0.30.1",
+    "astro-icon": "^1.1.0",
     "astro-og-canvas": "^0.4.2",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "astro-icon": "^1.1.0",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^40.0.0",
     "eslint-plugin-import": "^2.25.2",

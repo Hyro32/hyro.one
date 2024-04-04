@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import { getCollection } from 'astro:content'
 import languages from '../../../i18n/languages'
 import Layout from '../../../layouts/Layout.astro'
+import PostCard from '../../../components/PostCard.astro'
 
 export const getStaticPaths = (() => {
   return Object.keys(languages).map((lang) => ({
@@ -18,11 +19,7 @@ const title = 'mardroide.dev - blog'
 ---
 
 <Layout {lang} {title}>
-  <ul>
-    {
-      filteredPosts.map((post) => (
-        <a href={`${post.slug.split('/')[1]}`}>{post.data.title}</a>
-      ))
-    }
+  <ul class="flex flex-col items-center gap-6">
+    {filteredPosts.map((post) => <PostCard {post} />)}
   </ul>
 </Layout>
