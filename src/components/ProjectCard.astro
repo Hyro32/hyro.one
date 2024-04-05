@@ -1,21 +1,23 @@
 ---
-import { Icon } from 'astro-icon/components'
+import type { Project } from '../types/types'
+import RepoLanguage from './RepoLanguage.astro'
 
 interface Props {
-  url: string
-  name: string
+  project: Project
 }
 
-const { url, name } = Astro.props
+const { project } = Astro.props
 ---
 
 <a
-  href={url}
+  href={project.link}
   target="_blank"
-  class="flex items-start justify-between p-2 rounded-md"
+  id="project"
+  class="relative flex flex-col justify-between w-full p-4 min-h-40 lightSecondary"
 >
-  <div class="flex flex-col">
-    <h3 class="text-lg font-semibold">{name}</h3>
+  <div class="flex flex-col gap-2">
+    <h2 class="font-bold text-xl">{project.repo}</h2>
+    <p class="text-gray-600 text-sm">{project.description}</p>
   </div>
-  <Icon name="mdi:link-variant" class="size-5" />
+  <RepoLanguage color={project.languageColor} lang={project.language} />
 </a>

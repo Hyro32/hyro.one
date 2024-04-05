@@ -1,9 +1,10 @@
 ---
 import type { GetStaticPaths } from 'astro'
+import type { Project } from '../../types/types'
+import { REPOS_ENDPOINT, PAGE_TITLE } from '../../types/constants'
 import Layout from '../../layouts/Layout.astro'
-import ProjectCard from '../../components/ProjectCard.astro'
 import languages from '../../i18n/languages'
-import projects from '../../data/projects.json'
+import ProjectCard from '../../components/ProjectCard.astro'
 
 export const getStaticPaths = (() => {
   return Object.keys(languages).map((lang) => ({
@@ -12,32 +13,18 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths
 
 const { lang } = Astro.params
-const title = 'mardroide.dev'
+const title = PAGE_TITLE
+
+const projects = await fetch(REPOS_ENDPOINT)
+  .then((res) => res.json())
+  .then((projects: Project[]) => projects)
 ---
 
 <Layout {title} {lang}>
-  <div class="flex items-center justify-between gap-20">
-    <div class="flex flex-col gap-4">
-      <h1 class="text-4xl">Hi, I'm Marcos</h1>
-      <p class="text-lg">
-        I'm a software engineer and open-source enthusiast. I love to build
-        things and share my knowledge with the community.
-      </p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-6 mt-20">
-    <div class="flex items-center justify-between w-full">
-      <h2>Featured Projects</h2>
-      <a
-        href="https://github.com/Mardroide"
-        target="_blank"
-        class="text-blue-400"
-      >
-        See all projects
-      </a>
-    </div>
-    <ul class="grid grid-cols-2 gap-4">
-      {projects.map((project) => <ProjectCard {...project} />)}
+  <div class="flex flex-col gap-6">
+    <h2 class="text-xl">Projects</h2>
+    <ul class="grid grid-cols-3 gap-6">
+      {projects.map((project: Project) => <ProjectCard {project} />)}
     </ul>
   </div>
 </Layout>

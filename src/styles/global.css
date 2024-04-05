@@ -8,3 +8,7 @@ body {
   scroll-behavior: smooth;
   word-wrap: break-word;
 }
+
+.lightSecondary {
+  @apply border-gray-200 border rounded-md shadow-md bg-zinc-100 hover:scale-105 duration-200;
+}
