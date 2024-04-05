@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import { socials } from '../common'
+---
+
+<footer
+  class="flex items-center justify-between py-5 border-t-[1px] border-b-gray-300/40"
+>
+  <a href="https://astro.build" target="_blank">
+    <Image
+      src="https://astro.badg.es/v2/built-with-astro/tiny.svg"
+      alt="Built with Astro"
+      width={120}
+      height={20}
+    />
+  </a>
+  <ul class="flex items-center gap-3">
+    {
+      socials.map((social) => (
+        <li>
+          <a href={social.url} target="_blank" class="hover:text-blue-500">
+            <Icon name={social.icon} class="size-6" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

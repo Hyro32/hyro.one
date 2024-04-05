@@ -7,8 +7,15 @@ body {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   word-wrap: break-word;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .lightSecondary {
   @apply border-gray-200 border rounded-md shadow-md bg-zinc-100 hover:scale-105 duration-200;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('./_fonts/IBMPlexSans-Regular.ttf');
+  font-weight: 500;
 }
