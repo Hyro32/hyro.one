@@ -28,8 +28,8 @@ const projects = await fetch(REPOS_ENDPOINT)
 ---
 
 <Layout {title} {lang}>
-  <div class="flex items-center justify-evenly gap-8 mt-20">
-    <div class="flex flex-col gap-3 w-1/2 text-start">
+  <div class="flex flex-col items-center gap-8 mt-20 justify-evenly lg:flex-row">
+    <div class="flex flex-col gap-3 text-center lg:w-1/2 lg:text-start">
       <h2 class="text-xl font-semibold">Hi, I'm Marcos</h2>
       <p class="text-gray-600 text-balance">
         I am a 18 year old boy based at <strong>Spain</strong>. Currently I'm
@@ -37,7 +37,7 @@ const projects = await fetch(REPOS_ENDPOINT)
         I am passionate about how a few simple lines of code can turn into
         something so fascinating.
       </p>
-      <ul class="flex items-center gap-3">
+      <ul class="flex items-center justify-center gap-3 lg:justify-start">
         {
           techonologies.map((tech) => (
             <li>
@@ -56,7 +56,7 @@ const projects = await fetch(REPOS_ENDPOINT)
       </ul>
     </div>
     <Image
-      class="rounded-full ring-1 ring-gray-400 shadow-md"
+      class="hidden rounded-full shadow-md ring-1 ring-gray-400 md:hidden lg:block"
       src="https://avatars.githubusercontent.com/Mardroide?v=4"
       alt="Marcos Corrochano"
       loading="eager"
@@ -70,17 +70,17 @@ const projects = await fetch(REPOS_ENDPOINT)
       <a
         href="https://github.com/sphealhub"
         target="_blank"
-        class="text-blue-500 hover:scale-105 duration-200"
+        class="text-blue-500 duration-200 hover:scale-105"
         >Check out my organization!</a
       >
     </div>
-    <ul class="grid grid-cols-3 gap-6">
+    <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {projects.map((project: Project) => <ProjectCard {project} />)}
     </ul>
   </div>
   <div class="flex flex-col gap-6 my-20">
     <h2 class="text-xl">People</h2>
-    <ul class="grid grid-cols-6 gap-6">
+    <ul class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
       {
         people.map(({ name, image, url }) => (
           <PeopleCard {name} {image} {url} />

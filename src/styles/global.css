@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply break-words antialiased;
+  @apply antialiased break-words;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   word-wrap: break-word;
@@ -11,7 +11,11 @@ body {
 }
 
 .lightSecondary {
-  @apply border-gray-200 border rounded-md shadow-md bg-zinc-100 hover:scale-105 duration-200;
+  @apply duration-200 border border-gray-200 rounded-md shadow-md bg-zinc-100 hover:scale-105;
+}
+
+.queries {
+  @apply w-[90%] md:w-[70%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] mx-auto;
 }
 
 @font-face {

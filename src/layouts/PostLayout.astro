@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl } from '../i18n/utils'
 import Layout from './Layout.astro'
+import { GITHUB_URL } from '../common'
 import { Icon } from 'astro-icon/components'
 
 interface Props {
@@ -8,8 +9,6 @@ interface Props {
   post: any
 }
 
-const GITHUB_URL =
-  'https://github.com/Mardroide/mardroide.dev/blob/main/src/content/blog/'
 const lang = getLangFromUrl(Astro.url)
 const { title, post } = Astro.props
 ---
