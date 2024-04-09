@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  post: CollectionEntry<'blog'>
+}
+
+const { post } = Astro.props
+const postDate = new Date(post.data.date).toISOString().split('T')[0]
+---
+
+<a
+  href={`blog/${post.slug.split('/')[1]}`}
+  class="flex items-center justify-between w-3/4 p-4 rounded-md lightSecondary"
+>
+  <div class="flex flex-col">
+    <h2 class="text-xl font-bold">{post.data.title}</h2>
+    <div class="flex items-center gap-1 text-gray-500">
+      <Icon name="mingcute:calendar-2-line" />
+      <span class="text-sm">{postDate}</span>
+    </div>
+  </div>
+  <Icon name="mingcute:right-fill" class="size-6" />
+</a>

@@ -1,35 +1,25 @@
 ---
 import Head from '../components/Head.astro'
 import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
 
 interface Props {
   title: string
+  lang: string
 }
 
-const { title } = Astro.props
+const { title, lang } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <Head />
-    <title>{title}</title>
-  </head>
-  <body class="mx-auto max-w-xl w-[90%]">
+<html lang={lang}>
+  <Head {title} />
+  <body class="queries bg-[#fbfefb]">
     <Navbar />
-    <slot />
+    <div class="mt-10 mb-20">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
-
-<style is:global>
-  * {
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-  }
-
-  html,
-  body {
-    margin: 0 auto;
-    width: 100%;
-  }
-</style>
