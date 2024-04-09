@@ -1,13 +1,14 @@
 ---
-import { getLangFromUrl } from '../i18n/utils'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
 import LangSelector from './LangSelector.astro'
 import { Icon } from 'astro-icon/components'
 
 const lang = getLangFromUrl(Astro.url)
+const translation = useTranslations(lang)
 
 const routes = [
   {
-    name: 'Home',
+    name: translation('navHome'),
     path: `/${lang}`
   },
   {
@@ -19,9 +20,7 @@ const routes = [
 
 <nav class="w-full py-8 border-b-[1px] border-b-gray-300/40">
   <div class="mx-auto flex items-center justify-between">
-    <a href={`/${lang}`} class="font-bold text-2xl">
-      Mardroide
-    </a>
+    <a href={`/${lang}`} class="font-bold text-2xl"> Mardroide </a>
     <ul class="flex items-center gap-6">
       {
         routes.map((route) => (
@@ -40,12 +39,6 @@ const routes = [
         ))
       }
       <LangSelector />
-      <a href={`/${lang}/search`}>
-        <Icon
-          name="mingcute:search-2-line"
-          class="size-6 hover:text-blue-500"
-        />
-      </a>
     </ul>
   </div>
 </nav>
