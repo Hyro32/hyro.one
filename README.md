@@ -1,4 +1,4 @@
-# mardroide.dev
+# hyro.one
 
 Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://mardroide.dev).
 
@@ -19,13 +19,13 @@ Welcome to my portfolio! This website is dedicated to the community, apart from 
 1. Download all dependencies
 
 ```shell
-bun install
+pnpm install
 ```
 
 2. Start the project
 
 ```shell
-bunx --bun astro dev
+pnpm --bun astro dev
 ```
 
 ## Contributing

@@ -32,7 +32,7 @@ export const techonologies = [
 export const socials = [
   {
     icon: 'mingcute:github-line',
-    url: 'https://github.com/Mardroide'
+    url: 'https://github.com/Hyro32'
   },
   {
     icon: 'mingcute:ins-line',
