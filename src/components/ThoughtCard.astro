@@ -1,0 +1,14 @@
+---
+const { thought } = Astro.props
+const thougthDate = new Date(thought.data.date).toISOString().split('T')[0]
+---
+
+<a
+  href={`thoughts/${thought.slug.split('/')[1]}`}
+  class="flex items-start gap-8 w-full"
+>
+  <span class="text-[#8a7d77]">{thougthDate}</span>
+  <p class="hover:underline underline-offset-2 decoration-[1px]">
+    {thought.data.title}
+  </p>
+</a>

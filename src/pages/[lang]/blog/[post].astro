@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import PostLayout from '../../../layouts/PostLayout.astro'
 
+export const prerender = true;
 export const getStaticPaths = (async () => {
   const blog = await getCollection('blog')
 
@@ -23,6 +24,6 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 
-<PostLayout title={post.data.title + ' - mardroide.dev'} {post}>
+<PostLayout title={post.data.title + ' - hyro.one'} {post}>
   <Content />
 </PostLayout>

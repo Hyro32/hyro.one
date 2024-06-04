@@ -1,18 +1,9 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import {
-  REPOS_ENDPOINT,
-  PAGE_TITLE,
-  techonologies,
-  people,
-  type Project
-} from '../../common'
-import { Image } from 'astro:assets'
+import { Titles } from '../../common'
 import Layout from '../../layouts/Layout.astro'
 import languages from '../../i18n/languages'
-import ProjectCard from '../../components/ProjectCard.astro'
-import PeopleCard from '../../components/PeopleCard.astro'
-import { useTranslations } from '../../i18n/utils'
+import LangSelector from '../../components/LangSelector.astro'
 
 export const getStaticPaths = (() => {
   return Object.keys(languages).map((lang) => ({
@@ -21,72 +12,30 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths
 
 const { lang } = Astro.params
-const tranlation = useTranslations(lang)
-const title = PAGE_TITLE
-
-const projects = await fetch(REPOS_ENDPOINT)
-  .then((res) => res.json())
-  .then((projects: Project[]) => projects)
 ---
 
-<Layout {title} {lang}>
-  <div
-    class="flex flex-col items-center gap-8 mt-20 justify-evenly lg:flex-row"
-  >
-    <div class="flex flex-col gap-3 text-center lg:w-1/2 lg:text-start">
-      <h2 class="text-xl font-semibold">Hi, I'm Marcos</h2>
-      <p class="text-gray-600 text-balance">
-        {tranlation('about')}
-      </p>
-      <ul class="flex items-center justify-center gap-3 lg:justify-start">
-        {
-          techonologies.map((tech) => (
-            <li>
-              <a href={tech.link}>
-                <Image
-                  src={tech.icon}
-                  alt={tech.link}
-                  width={20}
-                  height={20}
-                  loading="eager"
-                />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+<Layout title={Titles.Home} {lang}>
+  <div class="flex flex-col gap-6">
+    <div class="flex items-center justify-between py-4">
+      <div class="flex flex-col gap-2">
+        <h1 class="text-2xl leading-4">Marcos Corrochano</h1>
+        <h3 class="text-lg text-[#8a7d77]">
+          Studying Systems Engineering at UAH
+        </h3>
+      </div>
+      <LangSelector />
     </div>
-    <Image
-      class="hidden rounded-full shadow-md ring-1 ring-gray-400 md:hidden lg:block"
-      src="https://avatars.githubusercontent.com/Hyro32?v=4"
-      alt="Marcos Corrochano"
-      loading="eager"
-      width={240}
-      height={240}
-    />
-  </div>
-  <div class="flex flex-col gap-6 my-20">
-    <div class="flex items-center justify-between">
-      <h2 class="text-xl">{tranlation('projects')}</h2>
-      <a
-        href="https://github.com/sphealhub"
-        target="_blank"
-        class="text-blue-500 duration-200 hover:scale-105"
-        >{tranlation('checkMyOrg')}</a
-      >
-    </div>
-    <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project: Project) => <ProjectCard {project} />)}
-    </ul>
-  </div>
-  <div class="flex flex-col gap-6 my-20">
-    <h2 class="text-xl">{tranlation('people')}</h2>
-    <ul class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
-      {
-        people.map(({ name, image, url }) => (
-          <PeopleCard {name} {image} {url} />
-        ))
-      }
-    </ul>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum
+      mollitia officia, consectetur minima voluptatibus. Recusandae, labore.
+      Voluptates itaque quibusdam inventore assumenda cum blanditiis sapiente
+      rem, nesciunt dolor, obcaecati est.
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit nostrum
+      mollitia officia, consectetur minima voluptatibus. Recusandae, labore.
+      Voluptates itaque quibusdam inventore assumenda cum blanditiis sapiente
+      rem, nesciunt dolor, obcaecati est.
+    </p>
   </div>
 </Layout>

@@ -1,44 +1,23 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils'
-import LangSelector from './LangSelector.astro'
-import { Icon } from 'astro-icon/components'
 
 const lang = getLangFromUrl(Astro.url)
 const translation = useTranslations(lang)
-
-const routes = [
-  {
-    name: translation('navHome'),
-    path: `/${lang}`
-  },
-  {
-    name: 'Blog',
-    path: `/${lang}/blog`
-  }
-]
 ---
 
-<nav class="w-full py-8 border-b-[1px] border-b-gray-300/40">
-  <div class="mx-auto flex items-center justify-between">
-    <a href={`/${lang}`} class="font-bold text-2xl">Hyro</a>
-    <ul class="flex items-center gap-6">
-      {
-        routes.map((route) => (
-          <li>
-            <a
-              href={route.path}
-              class={
-                Astro.url.pathname === route.path
-                  ? 'underline decoration-2 decoration-wavy underline-offset-4'
-                  : null
-              }
-            >
-              {route.name}
-            </a>
-          </li>
-        ))
-      }
-      <LangSelector />
-    </ul>
-  </div>
+<nav class="w-full pt-20">
+  <ul class="flex items-center gap-4">
+    <li>
+      <a href={`/${lang}`}>{translation('home')}</a>
+    </li>
+    <li>
+      <a href={`/${lang}/blog`}>{translation('blog')}</a>
+    </li>
+    <li>
+      <a href={`/${lang}/thoughts`}>{translation('thoughts')}</a>
+    </li>
+    <li>
+      <a href={`/${lang}/guestbook`}>{translation('guestbook')}</a>
+    </li>
+  </ul>
 </nav>

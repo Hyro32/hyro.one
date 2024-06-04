@@ -1,10 +1,10 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import { getCollection } from 'astro:content'
 import languages from '../../../i18n/languages'
+import { getCollection } from 'astro:content'
 import Layout from '../../../layouts/Layout.astro'
-import PostCard from '../../../components/PostCard.astro'
 import { Titles } from '../../../common'
+import ThoughtCard from '../../../components/ThoughtCard.astro'
 
 export const getStaticPaths = (() => {
   return Object.keys(languages).map((lang) => ({
@@ -14,12 +14,14 @@ export const getStaticPaths = (() => {
 
 const { lang } = Astro.params
 
-const blog = await getCollection('blog')
-const filteredPosts = blog.filter((post) => post.slug.split('/')[0] === lang)
+const thoughts = await getCollection('thoughts')
+const filteredThoughts = thoughts.filter(
+  (thought) => thought.slug.split('/')[0] === lang
+)
 ---
 
-<Layout title={Titles.Blog} {lang}>
+<Layout title={Titles.Home} {lang}>
   <ul class="flex flex-col items-center gap-6">
-    {filteredPosts.map((post) => <PostCard {post} />)}
+    {filteredThoughts.map((thought) => <ThoughtCard {thought} />)}
   </ul>
 </Layout>

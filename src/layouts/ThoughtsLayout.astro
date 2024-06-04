@@ -6,24 +6,25 @@ import { Icon } from 'astro-icon/components'
 
 interface Props {
   title: string
-  post: any
+  thought: any
 }
 
 const lang = getLangFromUrl(Astro.url)
 const translation = useTranslations(lang)
-const { title, post } = Astro.props
+const { title, thought } = Astro.props
+const thougthDate = new Date(thought.data.date).toISOString().split('T')[0]
 ---
 
 <Layout {lang} {title}>
   <div class="flex flex-col gap-6 mb-20">
     <div class="flex flex-col">
-      <h2 class="text-2xl">{post.data.title}</h2>
-      <p class="text-[#8a7d77]">{post.data.description}</p>
+      <h2 class="text-2xl">{thought.data.title}</h2>
+      <span class="text-[#8a7d77]">{thougthDate}</span>
     </div>
     <slot />
     <div class="flex items-center justify-center pt-4">
       <a
-        href={GITHUB_URL + post.slug + '.mdx'}
+        href={GITHUB_URL + thought.slug + '.mdx'}
         target="_blank"
         class="flex items-center gap-2 text-gray-600"
       >
