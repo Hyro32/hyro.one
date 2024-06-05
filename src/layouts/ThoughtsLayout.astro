@@ -22,15 +22,5 @@ const thougthDate = new Date(thought.data.date).toISOString().split('T')[0]
       <span class="text-[#8a7d77]">{thougthDate}</span>
     </div>
     <slot />
-    <div class="flex items-center justify-center pt-4">
-      <a
-        href={GITHUB_URL + thought.slug + '.mdx'}
-        target="_blank"
-        class="flex items-center gap-2 text-gray-600"
-      >
-        <Icon name="mingcute:github-line" class="size-6" />
-        {translation('editOnGithub')}
-      </a>
-    </div>
   </div>
 </Layout>

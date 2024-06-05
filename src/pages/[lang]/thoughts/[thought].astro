@@ -3,7 +3,6 @@ import type { GetStaticPaths } from 'astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import ThoughtsLayout from '../../../layouts/ThoughtsLayout.astro'
 
-export const prerender = true
 export const getStaticPaths = (async () => {
   const thoughts = await getCollection('thoughts')
 

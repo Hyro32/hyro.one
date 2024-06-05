@@ -2,30 +2,19 @@
 
 Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://mardroide.dev).
 
-## Tech used in this project
-
-- [Astro](https://astro.build)
-- [React](https://react.dev/)
-- [astro-heroicons](https://github.com/seanmcp/astro-heroicons)
-- [astro-expressive-code](https://github.com/expressive-code/expressive-code/tree/main/packages/astro-expressive-code)
-- Formatters:
-  - [eslint](https://eslint.org/)
-  - [Prettier](https://prettier.io/)
-  - [lint-staged](https://github.com/lint-staged/lint-staged#readme)
-  - [husky](https://typicode.github.io/husky/)
 
 ## How to run the project
 
 1. Download all dependencies
 
 ```shell
-pnpm install
+bun install
 ```
 
 2. Start the project
 
 ```shell
-pnpm --bun astro dev
+bun dev
 ```
 
 ## Contributing
