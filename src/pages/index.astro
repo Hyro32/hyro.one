@@ -1,4 +1,6 @@
 ---
-import { defaultLanguage } from "../i18n/languages"
-return Astro.redirect(defaultLanguage)
+// This is not really needed, en is the default language
+// import { defaultLanguage } from '../i18n/languages'
 ---
+
+<meta http-equiv="refresh" content="0;url=/en" />

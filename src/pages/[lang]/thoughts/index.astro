@@ -20,7 +20,7 @@ const filteredThoughts = thoughts.filter(
 )
 ---
 
-<Layout title={Titles.Home} {lang}>
+<Layout title={Titles.Thoughts} {lang}>
   <ul class="flex flex-col items-center gap-6">
     {filteredThoughts.map((thought) => <ThoughtCard {thought} />)}
   </ul>
