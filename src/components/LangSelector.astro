@@ -1,20 +1,36 @@
 ---
+import { getLangFromUrl } from '../i18n/utils'
+import { languages } from '../i18n/languages'
 import { Icon } from 'astro-icon/components'
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
-<button id="lang-button" class="flex items-center gap-2 rounded-md hover:text-blue-500">
-  <Icon name="mingcute:earth-2-line" class="size-5" />
-</button>
+<div class="relative">
+  <button class="flex items-center gap-1" id="languages-button">
+    <Icon name="mingcute:down-fill" />
+    {lang}
+  </button>
+  <ul class="absolute w-full text-end hidden" id="languages-list">
+    {
+      Object.entries(languages)
+        .filter(([key]) => key !== lang)
+        .map(([key, value]) => (
+          <li>
+            <a href={`/${key}`}>{value}</a>
+          </li>
+        ))
+    }
+  </ul>
+</div>
 
-<script> 
-  import { getLangFromUrl } from '../i18n/utils'
-  
-  const langButton = document.getElementById('lang-button')
+<script>
+  function toggleLangSelector() {
+    const langSelector = document.getElementById('languages-list')
+    langSelector!.classList.toggle('hidden')
+  }
 
-  langButton?.addEventListener('click', () => {
-    const currentLang = getLangFromUrl(new URL(window.location.href))
-    const nextLang = currentLang === 'en' ? 'es' : 'en'
-
-    window.location.href = `/${nextLang}`
-  })
+  document
+    .getElementById('languages-button')!
+    .addEventListener('click', toggleLangSelector)
 </script>

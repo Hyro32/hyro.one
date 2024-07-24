@@ -1,6 +1,29 @@
 ---
-// This is not really needed, en is the default language
-// import { defaultLanguage } from '../i18n/languages'
+import Layout from '../layouts/Layout.astro'
 ---
 
-<meta http-equiv="refresh" content="0;url=/en" />
+<Layout lang="en" title="Hyro - Portfolio">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-4 pb-5">
+      <img
+        src="https://avatars.githubusercontent.com/Hyro32"
+        alt="hyro"
+        class="h-12 w-12 rounded-md ring-1 ring-gray-400 object-cover"
+      />
+      <div class="flex flex-col">
+        <h2 class="text-xl font-semibold">Marcos Corrochano Arroyo</h2>
+        <span class="text-sm">Studying Systems Engineering at UAH</span>
+      </div>
+    </div>
+    <p>
+      I am a student of Systems Engineering at the University of Alcalá. I love
+      programming and learning new things. I am currently learning new languages
+      such as rust.
+    </p>
+    <p>
+      One of my dreams is to create a community of programmers who share their
+      knowledge and experiences. Creating new projects, contributing and sharing
+      knowledge is what motivates me to move forward.
+    </p>
+  </div>
+</Layout>
