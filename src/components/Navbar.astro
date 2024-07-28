@@ -8,10 +8,18 @@ const translation = useTranslations(lang)
 ---
 
 <nav class="flex items-center justify-between w-full pt-20">
-  <ul class="flex items-center gap-4">
-    <a href={getRelativeLocaleUrl(lang, '/')}>{translation('home')}</a>
-    <a href={getRelativeLocaleUrl(lang, 'blog')}>{translation('blog')}</a>
-    <a href={getRelativeLocaleUrl(lang, 'thoughts')}>{translation('thoughts')}</a>
+  <ul class="flex items-center gap-5">
+    <li>
+      <a href={getRelativeLocaleUrl(lang, 'home')}>{translation('home')}</a>
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(lang, 'blog')}>{translation('blog')}</a>
+    </li>
+    <li>
+      <a href={getRelativeLocaleUrl(lang, 'thoughts')}
+        >{translation('thoughts')}</a
+      >
+    </li>
   </ul>
   <LangSelector />
 </nav>

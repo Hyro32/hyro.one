@@ -1,21 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { socials } from '../common'
 ---
 
-<footer
-  class="w-full mx-auto flex items-center justify-center gap-10 absolute bottom-0 border-t-[1px] border-gray-400 p-2"
->
-  <ul class="flex items-center gap-3">
-    {
-      socials.map((social) => (
-        <li>
-          <a href={social.url} target="_blank">
-            <Icon name={social.icon} class="size-5" />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <p class="italic">"Don't wait until the last moment"</p>
+<footer class="flex flex-col items-center gap-2 py-6 w-full">
+  <Icon name="mingcute:more-1-line" class="size-5 text-gray-400" />
+  <div class="flex items-end justify-between w-full">
+    <p>Madrid, Spain</p>
+    <p class="text-xs">©️ 2024 <strong>HYRO.ONE</strong></p>
+  </div>
 </footer>

@@ -1,0 +1,29 @@
+---
+import { tech, apps } from '../common'
+import Badge from './Badge.astro'
+---
+
+<div class="flex flex-col gap-4">
+  <h3>Development</h3>
+  <ul class="flex items-center gap-3 flex-wrap">
+    {
+      tech.map((item) => (
+        <li>
+          <Badge text={item.text} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<div class="flex flex-col gap-4">
+  <h3>Apps and utils</h3>
+  <ul class="flex items-center gap-3 flex-wrap">
+    {
+      apps.map((item) => (
+        <li>
+          <Badge text={item.text} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
