@@ -1,6 +1,6 @@
 # hyro.one
 
-Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://mardroide.dev).
+Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://hyro.one).
 
 
 ## How to run the project

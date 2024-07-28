@@ -10,11 +10,11 @@ const postDate = new Date(post.data.date).toISOString().split('T')[0]
 ---
 
 <a
-  href={`blog/${post.slug.split('/')[1]}`}
-  class="flex items-start justify-between w-full py-4 rounded-md"
+  href={`blog/${post.slug}`}
+  class="flex items-start justify-between w-full rounded border border-neutral-800 bg-neutral-800/50 p-3 hover:scale-105 transition-transform"
 >
   <div class="flex flex-col gap-1">
-    <h2 class="text-xl hover:underline underline-offset-2 decoration-[1px]">
+    <h2 class="text-xl">
       {post.data.title}
     </h2>
     <p class="text-sm text-[#8a7d77]">{post.data.description}</p>

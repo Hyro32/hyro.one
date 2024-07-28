@@ -3,9 +3,9 @@ import { tech, apps } from '../common'
 import Badge from './Badge.astro'
 ---
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 max-sm:text-center">
   <h3>Development</h3>
-  <ul class="flex items-center gap-3 flex-wrap">
+  <ul class="flex items-center gap-3 flex-wrap max-sm:justify-center">
     {
       tech.map((item) => (
         <li>
@@ -15,9 +15,9 @@ import Badge from './Badge.astro'
     }
   </ul>
 </div>
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 max-sm:text-center">
   <h3>Apps and utils</h3>
-  <ul class="flex items-center gap-3 flex-wrap">
+  <ul class="flex items-center gap-3 flex-wrap max-sm:justify-center">
     {
       apps.map((item) => (
         <li>

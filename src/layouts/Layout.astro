@@ -2,20 +2,12 @@
 import Head from '../components/Head.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
-import '@fontsource/barlow';
-import { getLangFromUrl } from '../i18n/utils';
-
-interface Props {
-  title: string
-}
-
-const { title } = Astro.props
-const lang = getLangFromUrl(Astro.url)
+import '@fontsource/barlow'
 ---
 
 <!doctype html>
-<html lang={lang}>
-  <Head {title} />
+<html lang="en">
+  <Head />
   <body class="min-h-screen bg-[#111113] text-[#d4d4d4]">
     <div class="w-[90%] md:w-[70%] lg:w-[55%] xl:w-[45%] 2xl:w-[35%] mx-auto">
       <Navbar />
@@ -27,8 +19,20 @@ const lang = getLangFromUrl(Astro.url)
   </body>
 </html>
 
-<style>
+<style is:global>
   body {
     font-family: 'Barlow', sans-serif;
   }
+
+  @supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(38, 38, 38, 0.5);
+    border-radius: 5px;
+  }
+}
 </style>

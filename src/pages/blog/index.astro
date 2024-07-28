@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content"
+import PostCard from "../../components/PostCard.astro"
+import Layout from "../../layouts/Layout.astro"
+
+const blog = await getCollection('blog')
+---
+
+<Layout>
+  <ul class="flex flex-col items-center gap-6">
+    {blog.map((post) => <PostCard {post} />)}
+  </ul>
+</Layout>

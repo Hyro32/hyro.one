@@ -9,15 +9,6 @@ const blogCollection = defineCollection({
   })
 })
 
-const thoughtsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    date: z.date()
-  })
-})
-
 export const collections = {
-  blog: blogCollection,
-  thoughts: thoughtsCollection
+  blog: blogCollection
 }
