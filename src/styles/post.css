@@ -1,0 +1,11 @@
+#slot {
+  a {
+    color: #3498db;
+    text-decoration: underline;
+    text-decoration-thickness: 1.4px;
+  }
+
+  a:hover {
+    color: #2980b9;
+  }
+}

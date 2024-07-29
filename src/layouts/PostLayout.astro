@@ -2,6 +2,7 @@
 import Layout from './Layout.astro'
 import { GITHUB_URL } from '../common'
 import { Icon } from 'astro-icon/components'
+import '../styles/post.css'
 
 interface Props {
   post: any
@@ -12,12 +13,14 @@ const { post } = Astro.props
 ---
 
 <Layout>
-  <div class="flex flex-col gap-6 mb-20">
+  <div class="flex flex-col gap-6">
     <div class="flex flex-col">
       <h2 class="text-2xl">{post.data.title}</h2>
       <p class="text-[#8a7d77]">{post.data.description}</p>
     </div>
-    <slot />
+    <div id="slot" class="flex flex-col gap-6">
+      <slot />
+    </div>
     <div class="flex items-center justify-center pt-4">
       <a
         href={GITHUB_URL + post.slug + '.mdx'}
