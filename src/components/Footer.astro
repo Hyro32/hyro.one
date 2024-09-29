@@ -1,11 +1,13 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Reference from './Reference.astro';
 ---
 
-<footer class="flex flex-col items-center gap-2 py-6 w-full">
-  <Icon name="mingcute:more-1-line" class="size-5 text-gray-400" />
-  <div class="flex items-end justify-between w-full">
-    <p>Madrid, Spain</p>
-    <p class="text-xs">©️ 2024 <strong>HYRO.ONE</strong></p>
+<footer class="border-t border-zinc-800 font-light py-4">
+  <div class="mx-auto max-w-5xl flex items-center justify-between">
+    <p class="text-center">&copy; 2024 - hyro.one</p>
+    <div class="flex items-center gap-4">
+      <Reference icon="mingcute:github-line" ref="https://github.com/Hyro32" />
+      <Reference icon="mingcute:social-x-line" ref="https://x.com/HyroOne" />
+    </div>
   </div>
 </footer>

@@ -1,24 +1,8 @@
 ---
-import Projects from '@components/Projects.astro'
-import Skills from '@components/Skills.astro'
-import Profile from '@components/Profile.astro'
-import Layout from '@layouts/Layout.astro'
+import About from '@components/About.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="flex flex-col gap-4 max-sm:text-center">
-    <Profile />
-    <p>
-      I am a student of Systems Engineering at the University of Alcalá. I love
-      programming and learning new things. I am currently learning new languages
-      such as rust.
-    </p>
-    <p>
-      One of my dreams is to create a community of programmers who share their
-      knowledge and experiences. Creating new projects, contributing and sharing
-      knowledge is what motivates me to move forward.
-    </p>
-  </div>
-  <Skills />
-  <Projects />
+	<About />
 </Layout>

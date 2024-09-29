@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  class?: string;
+  ref?: string;
+  text?: string;
+  icon?: string;
+}
+
+const { class: className, ref = '/', text, icon } = Astro.props;
+---
+
+<a href={ref} class="flex items-center gap-2">
+  <Icon name={icon} class={`size-5 ${className}`} />
+  {text}
+</a>

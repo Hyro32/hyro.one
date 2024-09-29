@@ -1,39 +1,47 @@
-# hyro.one
+# Astro Starter Kit: Minimal
 
-Welcome to my portfolio! This website is dedicated to the community, apart from talking a little bit about me, I give the opportunity to all of you to publish articles in the community blog. You can see the website [here](https://hyro.one).
-
-
-## How to run the project
-
-1. Download all dependencies
-
-```shell
-bun install
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-2. Start the project
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
-```shell
-bun dev
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Contributing
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-We welcome contributions of any size and contributors of any skill level. As an open source project, we believe in giving back to our contributors. We are happy to help with guidance on PRs, technical writing, and turning any feature idea into a reality.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-### Pull requests
+Any static assets, like images, can be placed in the `public/` directory.
 
-When contributing to the project, you will need to fork the repository. When creating new pull requests (PR) keep a suitable format so that both I and the people who want to help can understand everything in a simpler way. Just follow the template when creating the PR.
+## 🧞 Commands
 
-Titles examples for PRs:
+All commands are run from the root of the project, from a terminal:
 
-- i18n: Dedicated to translations features or updates.
-- article: For that new posts for the comunity!
-- feat: New or updated software.
-- fix: Dedicated for any software fix of any type.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-### Contributors
+## 👀 Want to learn more?
 
-For those who decide to collaborate in the repository will be rewarded with certain rewards. They will get roles in the [discord](https://discord.gg/4WV4Ys65x7) depending on the type of contribution. I will try to gradually improve these rewards. Thank you very much!
-
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

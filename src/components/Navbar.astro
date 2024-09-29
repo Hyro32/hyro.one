@@ -1,8 +1,12 @@
-<nav class="flex items-center justify-between w-full pt-20 max-sm:pt-5">
-  <a href="/" class="font-semibold">HYRO.ONE</a>
-  <ul class="flex items-center gap-5">
-    <li>
-      <a href="/blog">blog</a>
-    </li>
-  </ul>
+---
+import { Image } from 'astro:assets';
+import cat from '@assets/cat.webp'
+---
+
+<nav class="flex items-center justify-between w-full">
+  <Image src={cat} alt="Astro" class="w-8 h-8" />
+  <div class="flex items-center gap-4">
+    <a href="/">home</a>
+    <a href="/blog">blog</a>
+  </div>
 </nav>

@@ -1,40 +1,23 @@
 ---
-import Head from '@components/Head.astro'
-import Navbar from '@components/Navbar.astro'
-import Footer from '@components/Footer.astro'
-import SpeedInsights from '@vercel/speed-insights/astro'
-import '@fontsource/barlow'
+import Footer from '@components/Footer.astro';
+import Head from '@components/Head.astro';
+import Navbar from '@components/Navbar.astro';
+import '@fontsource-variable/rubik';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Astro' } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
-  <Head />
-  <body class="min-h-screen bg-[#111113] text-[#d4d4d4]">
-    <div class="w-[90%] md:w-[70%] lg:w-[55%] xl:w-[45%] 2xl:w-[35%] mx-auto">
+  <Head {title} />
+  <body class="font-rubik bg-neutral-900 text-neutral-200">
+    <main class="m-auto max-w-5xl h-full my-10 space-y-8">
       <Navbar />
-      <div class="flex flex-col gap-y-16 my-20">
-        <slot />
-        <SpeedInsights />
-      </div>
-      <Footer />
-    </div>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
-
-<style is:global>
-  body {
-    font-family: 'Barlow', sans-serif;
-  }
-
-  @supports selector(::-webkit-scrollbar) {
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: rgb(38, 38, 38, 0.5);
-      border-radius: 5px;
-    }
-  }
-</style>
