@@ -12,6 +12,5 @@ const { class: className, ref = '/', text, icon } = Astro.props;
 ---
 
 <a href={ref} class="flex items-center gap-2">
-  <Icon name={icon} class={`size-5 ${className}`} />
-  {text}
+  {icon ? <Icon name={icon} class={`size-4 ${className}`} /> : text}
 </a>

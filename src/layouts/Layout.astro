@@ -1,8 +1,7 @@
 ---
 import Footer from '@components/Footer.astro';
 import Head from '@components/Head.astro';
-import Navbar from '@components/Navbar.astro';
-import '@fontsource-variable/rubik';
+import '@fontsource/geist-mono';
 
 interface Props {
   title?: string;
@@ -13,12 +12,11 @@ const { title = 'Astro' } = Astro.props;
 
 <html lang="en">
   <Head {title} />
-  <body class="font-rubik bg-neutral-900 text-neutral-200">
-    <main class="m-auto max-w-5xl my-10 space-y-8 w-[90%]">
-      <Navbar />
+  <body class="font-geist bg-black text-white text-sm">
+    <main class="m-auto max-w-2xl my-24 space-y-8 w-[90%] max-sm:my-10">
       <slot />
+      <Footer />
     </main>
-    <!-- <Footer /> -->
   </body>
 </html>
 

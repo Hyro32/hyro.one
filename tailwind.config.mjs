@@ -3,10 +3,13 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			colors: {
+				secondary: '#666'
+			},
 			fontFamily: {
-				rubik: ['Rubik Variable', 'sans-serif'],
+				geist: ['Geist Mono', 'monospace'],
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [],
 }
